@@ -58,10 +58,10 @@ get '/customer/logout' do
   redirect '/customer/login'
 end
 
-get '/customer/demo' do
-  erb :demo
-end
-
 def normal_login? usr, pwd
   usr.eql?("tom") && pwd.eql?("cat")
+end
+
+not_found do
+  'Oops, 404! Page Not Found'
 end

@@ -65,3 +65,7 @@ end
 not_found do
   'Oops, 404! Page Not Found'
 end
+
+error do
+  'Sorry, an error was happen.'
+end

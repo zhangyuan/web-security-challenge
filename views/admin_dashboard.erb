@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Administrator Dashboard</title>
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/customize.css" rel="stylesheet">
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Web Security Challenge</a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/administrator/center">Home</a></li>
+        <li><a href="/administrator/signout">Log out</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+
+  <div class="panel panel-success congratulation">
+    <div class="panel-heading">Congratulation!</div>
+    <div class="panel-body">
+      <p>You have logged in administrator management system.
+        Although there's no SQL Injection in authentication process, but the password is a weak or common password,
+        it's easy to guess, and the system didn't lock the account while too many invalid password submitted.</p>
+      <p>Here's your secret token: <strong>676D9A04B99F1673</strong></p>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

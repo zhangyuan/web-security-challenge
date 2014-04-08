@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Secure Sign In</title>
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/signin.css" rel="stylesheet"/>
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+  <form class="form-signin" role="form" action="login" method="post">
+    <h2 class="form-signin-heading">Please sign in</h2>
+    <span class="text-danger" id="messageLabel"><%== session[:message] %></span>
+    <input id="username" name="username" type="text" class="form-control" placeholder="Username" required autofocus>
+    <input id="password" name="password" type="password" class="form-control" placeholder="Password" required>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+  </form>
+
+</div>
+
+</body>
+</html>

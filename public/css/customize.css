@@ -1,0 +1,22 @@
+body {
+    padding-top: 50px;
+}
+
+.congratulation, #profile {
+    margin-top: 20px;
+}
+
+.form-search {
+    max-width: 550px;
+    text-align: center;
+    margin: auto;
+    margin-top: 50px;
+}
+#k {
+    width: 260px;
+}
+#search-result {
+
+    margin: auto;
+    margin-top: 50px;
+}

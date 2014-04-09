@@ -10,7 +10,7 @@ enable :sessions
 set :bind, "0.0.0.0"
 
 get '/' do
-  redirect "/customer/login"
+  erb :challenges
 end
 
 get '/customer/login' do

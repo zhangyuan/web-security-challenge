@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Challenges</title>
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/customize.css" rel="stylesheet"/>
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="text-center" id="welcome-message">
+    <h1>Welcome to Web Security Challenge Website!</h1>
+    <p>
+      In this website, there are 4 security flaws,
+      and we got some gifts for the first 4 people who complete these challenges.
+    </p>
+    <p id="remind-submit-token">
+      <span class="alert alert-warning">
+        <span class="glyphicon glyphicon-warning-sign"></span> <strong>Heads up!</strong> Once you complete any challenge, a secret token will be assign to you,
+        please follow instruction to <a class="text-primary" href="http://10.17.7.3:9000" target="_blank">submit it</a>.
+      </span>
+    </p>
+  </div>
+
+  <hr/>
+
+  <div class="challenge-description">
+    <h4>Challenge 1, SQL Injection</h4>
+    <p>
+      Use SQL Injection to bypass authentication, login as <strong>Jerry</strong> without using correct password.<br />
+    </p>
+    <p><a href="/customer/login" target="_blank" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-play"></span> Click here to start</a></p>
+  </div>
+
+  <div class="challenge-description">
+    <h4>Challenge 2, Hidden Admin Management URL & Careless Developer</h4>
+    <div>
+      <p>
+        <strong>Part 1:</strong> Admin manage URL was hidden, try to find clue and access that URL.<br />
+        <strong>Hint:</strong> You know there are some 'common' files in website...
+      </p>
+      <p>
+        <strong>Part 2:</strong> When you find the hidden manage URL, try to login as admin user.<br />
+        <strong>Hint:</strong> No security flaws in the login process, but developers are notorious for leaving statements
+        like FIXME's, TODO's, Code Broken, Hack, etc... inside the source code.
+      </p>
+      <p><a href="/customer/login" target="_blank" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-play"></span> Click here to start</a></p>
+    </div>
+  </div>
+
+  <div class="challenge-description">
+    <h4>Challenge 3, Cross-Site Script</h4>
+    <p>
+      Cross-Site Script vulnerability exist in product search page,
+      try to popup a javascript alert window by this vulnerability.
+    </p>
+    <p><a href="/product/search" target="_blank" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-play"></span> Click here to start</a></p>
+  </div>
+
+  <div class="challenge-description">
+    <h4>Challenge 4, Missing Function Level Access Control</h4>
+    <p>
+      Users in this website are not allowed to view other user's profile, but the access control is missing or insufficient.<br />
+      Login as user <strong>Tom</strong> (username: tom / password: cat), and try to view other user's profile.
+    </p>
+    <p><a href="/customer/login" target="_blank" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-play"></span> Click here to start</a></p>
+  </div>
+
+</div>
+
+</body>
+</html>

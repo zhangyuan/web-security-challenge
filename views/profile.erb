@@ -65,9 +65,30 @@
       <div class="panel panel-success congratulation">
         <div class="panel-heading">Congratulation!</div>
         <div class="panel-body">
-          <p>You have successfully bypass the poor access control by modify hidden uid field. For more detail, please see
+          <p>You have successfully bypass the poor access control by modify hidden uid field. For more detail, please
+            see
             <a href="https://www.owasp.org/index.php/Top_10_2013-A7-Missing_Function_Level_Access_Control" target="_blank">Missing
-              Function Level Access Control</a> for reference.</p>
+              Function Level Access Control</a> for reference.
+          </p>
+
+          <h4>What is Missing Function Level Access Control?</h4>
+
+          <p>
+            Most web applications verify function level access rights before making that functionality visible in the
+            UI. However, applications need to perform the same access control checks on the server when each function is
+            accessed. If requests are not verified, attackers will be able to forge requests in order to access
+            functionality without proper authorization.
+          </p>
+
+          <h4>Impact</h4>
+
+          <p>
+            Such flaws allow attackers to access unauthorized functionality. Administrative functions are key targets
+            for this type of attack.
+          </p>
+
+          <h4>Token</h4>
+
           <p>
             Here's your secret token: <strong>BA9CC28D07D19979</strong> and submit it
             <a href="http://10.17.7.3:9000/score" target="_blank">here</a>

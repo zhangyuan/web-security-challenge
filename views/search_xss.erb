@@ -18,7 +18,31 @@
     <div class="panel-heading">Congratulation!</div>
     <div class="panel-body">
       <p>You have found XSS flaw! Please see
-        <a href="https://www.owasp.org/index.php/Top_10_2013-A3-Cross-Site_Scripting_(XSS)" target="_blank">Cross-Site Script</a> for reference.</p>
+        <a href="https://www.owasp.org/index.php/Top_10_2013-A3-Cross-Site_Scripting_(XSS)" target="_blank">Cross-Site
+          Scripting</a> for reference.
+      </p>
+
+      <h4>What is Cross-Site Scripting</h4>
+
+      <p>
+        Cross-Site Scripting (XSS) attacks are a type of injection, in which malicious scripts are injected into
+        otherwise benign and trusted web sites. XSS attacks occur when an attacker uses a web application to send
+        malicious code, generally in the form of a browser side script, to a different end user. Flaws that allow these
+        attacks to succeed are quite widespread and occur anywhere a web application uses input from a user within the
+        output it generates without validating or encoding it.
+      </p>
+
+      <h4>Impact</h4>
+
+      <p>
+        An attacker can use XSS to send a malicious script to an unsuspecting user. The end user’s browser has no way to
+        know that the script should not be trusted, and will execute the script. Because it thinks the script came from
+        a trusted source, the malicious script can access any cookies, session tokens, or other sensitive information
+        retained by the browser and used with that site. These scripts can even rewrite the content of the HTML page.
+      </p>
+
+      <h4>Token</h4>
+
       <p>
         Here's your secret token: <strong>757B5DEE77D50012</strong> and submit it
         <a href="http://10.17.7.3:9000/score" target="_blank">here</a>

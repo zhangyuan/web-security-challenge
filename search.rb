@@ -14,6 +14,8 @@ end
 XSS_PATTERN = /^.*"\s*\/>\s*<\s*script\s*>.*<\/script\s*>.*$/
 
 def valid_xss? k
+  return false if k.nil?
+
   match_result = k.downcase.scan(XSS_PATTERN)
   return !match_result.empty?
 end

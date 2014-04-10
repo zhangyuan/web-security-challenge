@@ -6,6 +6,8 @@ def injection_login? (usr, pwd)
 end
 
 def valid_injection? param
+  return false if param.nil?
+
   match_string_injection?(param) || match_numeral_injection?(param)
 end
 

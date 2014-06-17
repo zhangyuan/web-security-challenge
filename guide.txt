@@ -1,0 +1,9 @@
+Step 1: install gems
+
+$ bundle install
+
+Step 2: start the server
+
+$ . start.sh
+
+Step 3: The vulnerable website should be started at: http://localhost:8000

@@ -1,8 +1,8 @@
-SQL_INJECTION_PATTERN_STRING = /^(\w+)'\s+or\s+'(\w*)'\s*=\s*'(\w*)$/
-SQL_INJECTION_PATTERN_NUMERAL = /^(\w*)'\s+or\s+\d+\s*=\s*\d+\s*;\s*--$/
+SQL_INJECTION_PATTERN_STRING = /^([\w ]*)'\s+or\s+'(\w*)'\s*=\s*'(\w*)$/
+SQL_INJECTION_PATTERN_NUMERAL = /^([\w ]*)'\s+or\s+\d+\s*=\s*\d+\s*;\s*--$/
 
 def injection_login? (usr, pwd)
-  return ((valid_injection? usr) || (valid_injection? pwd))
+  return (valid_injection? pwd)
 end
 
 def valid_injection? param

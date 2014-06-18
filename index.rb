@@ -5,6 +5,8 @@ require './injection'
 require './admin_login'
 require './search'
 
+require 'net/http'
+
 enable :sessions
 
 set :bind, "0.0.0.0"
@@ -17,10 +19,25 @@ get '/customer/login' do
   erb :login
 end
 
+def generate_token
+  token = SecureRandom.hex(8)
+
+  begin
+    Net::HTTP.get(URI("http://localhost:9000/score/token?token=%{token}&index=%{index}&key=705" % {:token => token, :index => 1}))
+  rescue
+    p "Failed to register token"
+  end
+
+  token
+end
+
 post '/customer/login' do
   if (injection_login?(params[:username], params[:password]))
     session[:message] = nil
     session[:auth_status] = "logged in"
+
+    session[:token_1] = generate_token if session[:token_1].nil?
+
     redirect "/customer/dashboard"
   else
     if (normal_login?(params[:username], params[:password]))
@@ -54,6 +71,7 @@ end
 get '/customer/logout' do
   session[:auth_status] = nil
   session[:tom_auth_status] = nil
+  session[:token_1] = nil
 
   redirect '/customer/login'
 end

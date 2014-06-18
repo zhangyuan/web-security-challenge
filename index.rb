@@ -67,6 +67,7 @@ end
 
 post '/customer/myProfile' do
   if (!params[:uid].nil?) && (!params[:uid].eql?("47290"))
+    session[:token_4] = (generate_token CHALLENGE_4) if session[:token_4].nil?
     erb :profile, :locals => {:success => true, :name => "Jerry", :role => "QA"}
   else
     erb :profile, :locals => {:message => "Profile refreshed at #{Time.now}", :name => "Tom Cat", :role => "Developer"}
@@ -77,6 +78,7 @@ get '/customer/logout' do
   session[:auth_status] = nil
   session[:tom_auth_status] = nil
   session[:token_1] = nil
+  session[:token_4] = nil
 
   redirect '/customer/login'
 end

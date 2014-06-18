@@ -11,6 +11,11 @@ enable :sessions
 
 set :bind, "0.0.0.0"
 
+CHALLENGE_1 = 1
+CHALLENGE_2 = 2
+CHALLENGE_3 = 3
+CHALLENGE_4 = 4
+
 get '/' do
   erb :challenges
 end
@@ -19,13 +24,13 @@ get '/customer/login' do
   erb :login
 end
 
-def generate_token
+def generate_token challenge_index
   token = SecureRandom.hex(8)
 
   begin
-    Net::HTTP.get(URI("http://localhost:9000/score/token?token=%{token}&index=%{index}&key=705" % {:token => token, :index => 1}))
-  rescue
-    p "Failed to register token"
+    Net::HTTP.get(URI("http://localhost:9000/score/token?token=#{token}&index=#{challenge_index}&key=705"))
+  rescue Exception => e
+    p "Failed to register token. #{e}"
   end
 
   token
@@ -36,7 +41,7 @@ post '/customer/login' do
     session[:message] = nil
     session[:auth_status] = "logged in"
 
-    session[:token_1] = generate_token if session[:token_1].nil?
+    session[:token_1] = (generate_token CHALLENGE_1) if session[:token_1].nil?
 
     redirect "/customer/dashboard"
   else

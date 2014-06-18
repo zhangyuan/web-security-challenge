@@ -5,8 +5,10 @@ end
 
 post '/product/search' do
   if (valid_xss? params[:k])
+    session[:token_3] = (generate_token CHALLENGE_3) if session[:token_3].nil?
     erb :search_xss
   else
+    session[:token_3] = nil
     erb :search, :locals => {:k => params[:k]}
   end
 end

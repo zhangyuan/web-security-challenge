@@ -1,3 +1,3 @@
 #!/bin/bash
 
-thin stop
+bundle exec thin stop

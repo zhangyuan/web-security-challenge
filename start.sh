@@ -1,3 +1,3 @@
 #!/bin/bash
 
-thin start -d -p 8000
+bundle exec thin start -d -p 8000
